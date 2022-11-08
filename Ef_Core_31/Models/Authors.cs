@@ -7,5 +7,7 @@
         public string LastName { get; set; }
         public string Country { get; set; }
         public DateTime BithDate { get; set; }
+
+        public ICollection<Books> Books { get; set; }
     }
 }

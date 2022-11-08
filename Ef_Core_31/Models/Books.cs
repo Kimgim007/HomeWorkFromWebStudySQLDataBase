@@ -8,6 +8,8 @@
         public int AuthorId { get; set; }
         public Authors Author { get; set; }
 
-        public int Year { get; set; }
+        public DateTime Year { get; set; }
+
+        public ICollection<Books> UserBooks { get; set; }
     }
 }
