@@ -1,0 +1,35 @@
+﻿@model Book
+
+
+<table class="table">
+
+	<form action="/Book/AddBook" method="post">
+		<div>
+			<p>
+				<div>
+					Name
+				</div>
+				@Html.TextBoxFor(x => x.Name)
+				@Html.ValidationMessageFor(x=>x.Name)
+			</p>
+			<p>
+			
+					Author
+					</div>
+				@Html.DropDownListFor(model => model.AuthorId, Model.AuthorList))
+				
+			</p>
+			<p>
+				<div>
+					Year
+					@Html.TextBoxFor(model => model.Year, new { @type="date", @class = "wide",  @Value = Model.Year.ToString("yyyy-MM-dd") } )
+					@Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+				</div>
+			</p>
+		</div>
+		@Html.HiddenFor(x=>x.BookId)
+		<div>
+			<input type="submit" value="Добавить " />
+		</div>
+	</form>
+</table>

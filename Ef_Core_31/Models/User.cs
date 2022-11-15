@@ -1,13 +1,15 @@
 ﻿namespace Ef_Core_31.Models
 {
-    public class Authors
+    public class User
     {
-        public int AuthorId { get; set; }
+        public int UserId { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Country { get; set; }
+
+        public string Email { get; set; }
         public DateTime BithDate { get; set; }
 
-        public ICollection<Books> Books { get; set; }
+        public ICollection<UserBook> UserBooks { get; set; }
     }
 }

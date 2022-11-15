@@ -1,0 +1,44 @@
+﻿@model Author
+
+
+
+<table class="table">
+
+	<form action="/Author/AddAuthor" method="post">
+		<div>
+			<p>
+				<div>
+					Enter FirstName
+				</div>
+				@Html.TextBoxFor(x => x.FirstName)
+				@Html.ValidationMessageFor(x=>x.FirstName)
+			</p>
+			<p>
+				<div>
+					Enter LastName
+				</div>
+				@Html.TextBoxFor(x => x.LastName)
+				@Html.ValidationMessageFor(x=>x.LastName)
+			</p>
+			<p>
+				<div>
+					Country
+				</div>
+				@Html.TextBoxFor(x => x.Country)
+				@Html.ValidationMessageFor(x=>x.Country)
+
+			</p>
+			<p>
+				<div>
+					BithDay
+					@Html.TextBoxFor(model => model.BithDate, new { @type="date", @class = "wide",  @Value = Model.BithDate.ToString("yyyy-MM-dd") } )
+					@Html.ValidationMessageFor(model => model.BithDate, "", new { @class = "text-danger" })
+				</div>
+			</p>
+		</div>
+		@Html.HiddenFor(x=>x.AuthorId)
+		<div>
+			<input type="submit" value="Добавить " />
+		</div>
+	</form>
+</table>

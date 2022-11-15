@@ -1,0 +1,43 @@
+﻿@model User
+
+
+<table class="table">
+
+	<form action="/User/AddUser" method="post">
+		<div>
+			<p>
+				<div>
+					Enter FirstName
+				</div>
+				@Html.TextBoxFor(x => x.FirstName)
+				@Html.ValidationMessageFor(x=>x.FirstName)
+			</p>
+			<p>
+				<div>
+					Enter LastName
+				</div>
+				@Html.TextBoxFor(x => x.LastName)
+				@Html.ValidationMessageFor(x=>x.LastName)
+			</p>
+			<p>
+				<div>
+					Email
+					</div>
+					@Html.TextBoxFor(x => x.Email)
+				@Html.ValidationMessageFor(x=>x.Email)
+				
+			</p>
+			<p>
+				<div>
+					BithDay
+					@Html.TextBoxFor(model => model.BithDate, new { @type="date", @class = "wide",  @Value = Model.BithDate.ToString("yyyy-MM-dd") } )
+					@Html.ValidationMessageFor(model => model.BithDate, "", new { @class = "text-danger" })
+				</div>
+			</p>
+		</div>
+		@Html.HiddenFor(x=>x.UserId)
+		<div>
+			<input type="submit" value="Добавить " />
+		</div>
+	</form>
+</table>
